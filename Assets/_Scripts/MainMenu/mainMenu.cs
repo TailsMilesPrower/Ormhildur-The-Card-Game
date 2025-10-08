@@ -5,6 +5,19 @@ public class mainMenu : MonoBehaviour
     public void playGame()
     {
         SceneManager.LoadScene("Lyubo");
-        Debug.Log("Play Game");
     }
+    public void quitGame()
+    {
+        Application.Quit();
+    }
+    public void Credits()
+    {
+               SceneManager.LoadScene("Credits");
+    }
+    public void BackToMenu()
+    {
+                      SceneManager.LoadScene("mainMenu");
+    }
+
+
 }

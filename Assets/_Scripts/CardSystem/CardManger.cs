@@ -48,9 +48,25 @@ public class CardManger : MonoBehaviour
 
         if (playerTurn) 
         {
-            if (Input.GetKeyDown(KeyCode.KeypadEnter)) 
+            if (Input.GetKeyDown(KeyCode.Space)) 
             {
                 playerTurn = false;
+                for (int i = 0; i < playerTable.Length; i++)
+                {
+
+                    if (playerTable[i] != null)
+                    {
+                        CardBase target = FindTarget(i, enemyTable);
+                        if (target != null)
+                        {
+                            playerTable[i].Attack(target);
+                        }
+                        else
+                        {
+                            enemyHealth = playerTable[i].Attack(enemyHealth);
+                        }
+                    }
+                }
                 StartCoroutine(EnemyTurn());
             }
         }
@@ -58,61 +74,68 @@ public class CardManger : MonoBehaviour
 
     public IEnumerator EnemyTurn()
    {
-        if (enemySegment[currentSegement].type == EnemyMoves.enemyMove.cardPlacing)
+        if (currentSegement < enemySegment.Length)
         {
-            if (enemySegment[currentSegement].waitUnitilAllIsDead !=true && currentMove !=0 || NoEnemyUnits() ==true)
+            if (enemySegment[currentSegement].type == EnemyMoves.enemyMove.cardPlacing)
             {
-                while (AvaibleSpace())
+                if (enemySegment[currentSegement].waitUnitilAllIsDead != true && currentMove != 0 || NoEnemyUnits() == true)
                 {
-                    if (enemySegment[currentSegement].cardsPlacement.Length>currentMove)
+                    while (AvaibleSpace())
                     {
-                        int[] spotLefts = AvaibleSpaceList();
-                        GameObject newlyPlaceCard = Instantiate( enemySegment[currentSegement].cardsPlacement[currentMove]);
-                       
-                        int randomNumber = Random.Range(0, spotLefts.Length);
-                        
-                        newlyPlaceCard.transform.eulerAngles = new Vector3(0, 0 ,180);
+                        if (enemySegment[currentSegement].cardsPlacement.Length > currentMove)
+                        {
+                            int[] spotLefts = AvaibleSpaceList();
+                            GameObject newlyPlaceCard = Instantiate(enemySegment[currentSegement].cardsPlacement[currentMove]);
 
-                        newlyPlaceCard.transform.position =enemyPosition[spotLefts[randomNumber]].transform.position;
+                            int randomNumber = Random.Range(0, spotLefts.Length);
 
-                        enemyTable[spotLefts[randomNumber]] = newlyPlaceCard.GetComponent<CardBase>();
-                        freePosition[spotLefts[randomNumber]] = false;
+                            newlyPlaceCard.transform.eulerAngles = new Vector3(0, 0, 180);
 
-                        currentMove++;
-                    }
+                            newlyPlaceCard.transform.position = enemyPosition[spotLefts[randomNumber]].transform.position;
 
-                    
-                    yield return new WaitForSeconds(1);
-                }
-            }
+                            enemyTable[spotLefts[randomNumber]] = newlyPlaceCard.GetComponent<CardBase>();
+                            freePosition[spotLefts[randomNumber]] = false;
 
-            for(int i = 0; i < enemyTable.Length; i++)
-            {
+                            currentMove++;
+                        }
+                        else
+                        {
+                            currentSegement++;
+                            break;
+                        }
 
-                if (enemyTable[i] != null)
-                {
-                    CardBase target = FindTarget(i,playerTable);
-                    if(target != null)
-                    {
-                        enemyTable[i].Attack(target);
-                    }
-                    else 
-                    {
-                       playerHealth = enemyTable[i].Attack(playerHealth);
+
+                        yield return new WaitForSeconds(1);
                     }
                 }
+
+                for (int i = 0; i < enemyTable.Length; i++)
+                {
+
+                    if (enemyTable[i] != null)
+                    {
+                        CardBase target = FindTarget(i, playerTable);
+                        if (target != null)
+                        {
+                            enemyTable[i].Attack(target);
+                        }
+                        else
+                        {
+                            playerHealth = enemyTable[i].Attack(playerHealth);
+                        }
+                    }
+                }
             }
-        }
-        else
-        {
-            if (NoEnemyUnits()) 
-            { 
+            else
+            {
+                if (NoEnemyUnits())
+                {
+
+                }
 
             }
 
         }
-       
-       
         playerTurn = true;
     }
 

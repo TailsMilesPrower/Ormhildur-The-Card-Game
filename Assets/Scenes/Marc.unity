@@ -639,7 +639,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1124287844721648315, guid: a6cea20e634c6d447bbf87156506c429, type: 3}
       propertyPath: m_Name
-      value: zeroVisuelCard
+      value: zeroVisuelCard 1
       objectReference: {fileID: 0}
     - target: {fileID: 3093511422940617315, guid: a6cea20e634c6d447bbf87156506c429, type: 3}
       propertyPath: might
@@ -844,6 +844,10 @@ PrefabInstance:
       propertyPath: 'enemySegment.Array.data[0]'
       value: 
       objectReference: {fileID: 11400000, guid: 2cb6e8bd7373fc94b8eada4c738e20e6, type: 2}
+    - target: {fileID: 5177999090421270795, guid: f148bdc9ec62b3b4a884065f1dc45f35, type: 3}
+      propertyPath: 'enemySegment.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 4ab4fed2777983d4f8a0d6f00961ffa6, type: 2}
     - target: {fileID: 5177999090421270795, guid: f148bdc9ec62b3b4a884065f1dc45f35, type: 3}
       propertyPath: 'enemyPosition.Array.data[0]'
       value: 

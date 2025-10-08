@@ -3,7 +3,7 @@ using UnityEngine;
 public abstract class CardBase : MonoBehaviour
 {
     [Header("Visual Elements")]
-    [SerializeField] protected string name;
+    public string name;
     [Tooltip("card image for each health state where index zero is max health each state other state is place in order after that")]
     [SerializeField] protected Sprite[] cardImage;
 
@@ -18,10 +18,15 @@ public abstract class CardBase : MonoBehaviour
     protected CardManger manger;
     protected SpriteRenderer spriterenderer;
 
-    private void Awake()
+    protected void Awake()
+    {
+        cardAwake();
+    }
+
+    protected virtual void cardAwake()
     {
         spriterenderer = GetComponent<SpriteRenderer>();
-
+        spriterenderer.sprite = cardImage[0];
     }
 
     public virtual void PlacingCard(CardManger cardManger)
@@ -41,7 +46,14 @@ public abstract class CardBase : MonoBehaviour
         }
         else
         {
-            spriterenderer.sprite = cardImage[cardImage.Length-1-toughness];
+            if (cardImage.Length-curretToughness >= 0)
+            {
+                spriterenderer.sprite = cardImage[cardImage.Length-1-curretToughness];
+            }
+            else
+            {
+                spriterenderer.sprite = cardImage[0];
+            }
         }
     }
 
@@ -56,6 +68,12 @@ public abstract class CardBase : MonoBehaviour
     public virtual void Attack(CardBase target)
     {
         target.TakeDamage(might);
+    }
+
+    public virtual int Attack(int target)
+    {
+        target -= might;
+        return target;
     }
  
 

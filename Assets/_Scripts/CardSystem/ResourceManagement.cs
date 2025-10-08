@@ -17,16 +17,16 @@ public class ResourceManagement : MonoBehaviour
         onStaminaChanged?.Invoke(currentStamina, maxStamina);
     }
 
-    public bool CanPlayCard(int cost)
+    public bool CanPlayCard(int cardCost)
     {
-        return currentStamina >= cost;
+        return currentStamina >= cardCost;
     }
     
-    public bool SpendStamina(int cost)
+    public bool SpendStamina(int cardCost)
     {
-        if (!CanPlayCard(cost)) return false;
+        if (!CanPlayCard(cardCost)) return false;
 
-        currentStamina -= cost;
+        currentStamina -= cardCost;
         onStaminaChanged?.Invoke(currentStamina, maxStamina); 
         return true;
     }

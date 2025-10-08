@@ -1320,10 +1320,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1663501482}
   - component: {fileID: 1663501481}
+  - component: {fileID: 1663501488}
   - component: {fileID: 1663501483}
   - component: {fileID: 1663501484}
   - component: {fileID: 1663501486}
   - component: {fileID: 1663501485}
+  - component: {fileID: 1663501487}
   m_Layer: 0
   m_Name: Card
   m_TagString: Card
@@ -1499,6 +1501,41 @@ MonoBehaviour:
   cardDescriptionText: {fileID: 0}
   cardCostText: {fileID: 0}
   cardArtworkImage: {fileID: 671499494538028020, guid: 7fc408fb54320f04a9294ba1f89080d7, type: 3}
+--- !u!114 &1663501487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1663501480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd64ed90c5578c7499141c44a2ebf4a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CardHighlight
+  highlightColor: {r: 0, g: 1, b: 0, a: 1}
+  unavailableColor: {r: 1, g: 0, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  cardCost: 0
+  resourceManagement: {fileID: 1663501488}
+--- !u!114 &1663501488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1663501480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1042bfeddd539254d94371b3a2819eb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ResourceManagement
+  maxStamina: 1000
+  currentStamina: 3
+  staminaGainPerRound: 1
+  onStaminaChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2039166997
 GameObject:
   m_ObjectHideFlags: 0

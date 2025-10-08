@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aab1ca22fdf95e64c866a25f4130e67c, type: 3}
   m_Name: test
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMoves
-  type: 1
-  cardsPlacement: []
+  type: 0
+  waitUnitilAllIsDead: 0
+  cardsPlacement:
+  - {fileID: 1124287844721648315, guid: a6cea20e634c6d447bbf87156506c429, type: 3}
+  - {fileID: 1124287844721648315, guid: a6cea20e634c6d447bbf87156506c429, type: 3}
   speaker: 
   facailExprestion: []
   diaglouge: []

@@ -46,7 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PrototypeCard
   name: cool
-  cardImage: []
+  cardImage:
+  - {fileID: 21300000, guid: 1736c36c10c7fb3449e3c8c611f0fc0f, type: 3}
   toughness: 0
   might: 0
   price: 0

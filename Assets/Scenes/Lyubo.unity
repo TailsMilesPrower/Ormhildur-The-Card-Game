@@ -2007,8 +2007,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   enemySegment:
-  - {fileID: 11400000, guid: 2cb6e8bd7373fc94b8eada4c738e20e6, type: 2}
-  - {fileID: 11400000, guid: 4ab4fed2777983d4f8a0d6f00961ffa6, type: 2}
+  - {fileID: 11400000, guid: ac8544112827b3e43999f780b81a757c, type: 2}
+  - {fileID: 11400000, guid: c9b080f1b3e2e3245b6c11eeaccba23b, type: 2}
+  - {fileID: 11400000, guid: 3743ac1ae6300b841b0932012aeaed9a, type: 2}
+  - {fileID: 11400000, guid: b8c78524583a67647bcf92fbe5648071, type: 2}
+  - {fileID: 11400000, guid: 20446f897b9a53c43ad897bb7b5a1138, type: 2}
   reManagment: {fileID: 633854943}
   textPlayerHealth: {fileID: 1490472825}
   textEnemyHealth: {fileID: 94828540}

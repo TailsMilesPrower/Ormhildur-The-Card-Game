@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class CardPlacement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class CardPlacement : MonoBehaviour,IPointerDownHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     [Header("Placement Settings")]
     
@@ -17,7 +17,7 @@ public class CardPlacement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         PlaceCard(other.gameObject);
 
     }
-
+    
     void PlaceCard(GameObject card)
     {
         Vector3 newPostion = transform.position + (Vector3) (placementOffset * currentCardCount);
@@ -40,10 +40,14 @@ public class CardPlacement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         canvas = GetComponentInParent<Canvas>();
     }
 
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        Debug.Log("onClick");
+    }
     public void OnBeginDrag(PointerEventData eventData)
     {
-        canvasGroup.alpha = 0.7f;
-        canvasGroup.blocksRaycasts = false;
+        //canvasGroup.alpha = 0.7f;
+        //canvasGroup.blocksRaycasts = false;
     }
     
     public void OnDrag(PointerEventData eventData)
@@ -53,8 +57,8 @@ public class CardPlacement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        canvasGroup.alpha = 1f;
-        canvasGroup.blocksRaycasts = true;
+        //canvasGroup.alpha = 1f;
+        //canvasGroup.blocksRaycasts = true;
         //currentCardCount--;
     }
 

@@ -24,6 +24,8 @@ public class CardManger : MonoBehaviour
     private int currentSegement = 0;
     private int currentMove =0;
 
+    private bool enemyturn;
+
     
     void Start()
     {
@@ -31,11 +33,15 @@ public class CardManger : MonoBehaviour
         {
             freePosition.Add(true);
         }
-        StartCoroutine(EnemyTurn());
     }
 
     private void Update()
     {
+        if(playerTurn== false && enemyturn == false)
+        {
+            StartCoroutine(EnemyTurn());
+            enemyturn = true;
+        }
         UpdateSpace();
         if (enemySegment.Length<= currentSegement|| enemyHealth <= 0)
         {
@@ -69,7 +75,7 @@ public class CardManger : MonoBehaviour
                         }
                     }
                 }
-                StartCoroutine(EnemyTurn());
+                
             }
         }
     }
@@ -138,6 +144,7 @@ public class CardManger : MonoBehaviour
             }
 
         }
+        enemyturn = false;
         playerTurn = true;
     }
 

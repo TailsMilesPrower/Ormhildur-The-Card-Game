@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(SpriteRenderer))]
@@ -13,12 +14,12 @@ public class CardHighlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     [Header("References")]
     public ResourceManagement resourceManagement;
 
-    private SpriteRenderer spriteRenderer;
+    private Image spriteRenderer;
     private bool isHovering = false;
 
     private void Awake()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<Image>();
         if (spriteRenderer != null ) spriteRenderer.color = normalColor;
     }
 

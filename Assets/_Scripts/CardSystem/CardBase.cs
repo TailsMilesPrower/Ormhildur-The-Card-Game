@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class CardBase : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public abstract class CardBase : MonoBehaviour
     protected int curretToughness;
     
     protected CardManger manger;
-    protected SpriteRenderer spriterenderer;
+    protected Image spriterenderer;
 
     protected void Awake()
     {
@@ -25,7 +26,7 @@ public abstract class CardBase : MonoBehaviour
 
     protected virtual void cardAwake()
     {
-        spriterenderer = GetComponent<SpriteRenderer>();
+        spriterenderer = GetComponent<Image>();
         spriterenderer.sprite = cardImage[0];
     }
 

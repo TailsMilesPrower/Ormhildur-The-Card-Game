@@ -1013,8 +1013,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.28652444, y: 0, z: -0, w: 0.95807296}
   m_LocalPosition: {x: -6.53, y: 1.81, z: -0.5}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.13, y: 0.13, z: 1.3}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2026,7 +2026,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.03, y: 2.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1331933762}
   - {fileID: 1791790883}
@@ -4934,9 +4934,9 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
+  - {fileID: 444206222}
   - {fileID: 633854945}
   - {fileID: 619394802}
-  - {fileID: 444206222}
   - {fileID: 2039167000}
   - {fileID: 447533295}
   - {fileID: 506890530}

@@ -68,8 +68,14 @@ public class CardPlacement : MonoBehaviour,IPointerDownHandler,IPointerUpHandler
         {
             if (eventData.pointerDrag != null)
             {
-                Image cardBase = eventData.pointerDrag.GetComponent<Image>();
-                if (cardBase != null) { 
+                GameObject card = eventData.pointerDrag.GetComponent<GameObject>();
+                if(card != null)
+                {
+                    Debug.Log(card.name);
+                }
+                Image cardBase = card.GetComponent<Image>();  
+                if (cardBase != null) 
+                { 
                     cardShow.sprite =  cardBase.sprite;
                     Debug.Log("onClick");
                 }
@@ -89,6 +95,21 @@ public class CardPlacement : MonoBehaviour,IPointerDownHandler,IPointerUpHandler
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        if (Input.GetKey(KeyCode.Mouse1))
+        {
+            if (eventData.pointerDrag != null)
+            {
+
+                Image cardBase = eventData.pointerDrag.GetComponent<Image>();
+                if (cardBase != null)
+                {
+                    cardShow.sprite = cardBase.sprite;
+                    Debug.Log("onClick");
+                }
+            }
+
+
+        }
         if (isPlaced == false)
         {
             canvasGroup.alpha = 0.7f;

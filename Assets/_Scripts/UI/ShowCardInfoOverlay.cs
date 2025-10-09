@@ -9,9 +9,16 @@ public class ShowCardInfoOverlay : MonoBehaviour
     public TMP_Text cardNameText;
     public TMP_Text cardDescriptionText;
     public TMP_Text cardCostText;
-    public Sprite cardArtworkImage;
-    
-    
+    public Image cardArtworkImage;
+
+    [Header("Preview Settings")]
+    public GameObject cardPreviewPanel;
+    public Image cardPreviewImage;
+    public float previewScale = 2f;
+
+    private CardInfo currentCard;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,22 +26,45 @@ public class ShowCardInfoOverlay : MonoBehaviour
         {
             overlayPanel.SetActive(false);
         }
+
+        if (cardPreviewPanel != null)
+        {
+            cardPreviewPanel.SetActive(false);
+        }
+
     }
 
-    public void ShowCardInfo(CardInfo cardInfo)
+    public void ShowCardInfoFromPrefab(GameObject cardPrefab)
     {
-        if(cardInfo == null)
+        if (cardPrefab == null)
         {
-            Debug.LogWarning("CardInfoOverlay: No card info provided");
+            Debug.LogWarning("CardInfoOverlay: No card prefab provided");
             return;
         }
 
+        /*
+        CardInfo cardInfo = GetCardInfoFromPrefab(cardPrefab);
+        if (cardInfo == null)
+        {
+            Debug.LogWarning("CardInfoOverlay: No cardInfo component found");
+            return;
+        }
+        */
+
+        //currentCard = cardInfo;
+        //ShowCardInfo(cardInfo);
+
+    }
+
+
+    public void ShowCardInfo(CardInfo cardInfo)
+    {
         if (overlayPanel != null)
         {
             overlayPanel.SetActive(true);
         }
 
-        if(cardNameText != null)
+        if (cardNameText != null)
         {
             cardNameText.text = cardInfo.cardName;
         }
@@ -49,9 +79,9 @@ public class ShowCardInfoOverlay : MonoBehaviour
             cardCostText.text = $"Cost: {cardInfo.cost}";
         }
 
-        if (cardArtworkImage != null && cardInfo.artwork !=null)
+        if (cardArtworkImage != null && cardInfo.artwork != null)
         {
-            cardArtworkImage = cardInfo.artwork;
+            cardArtworkImage.sprite = cardInfo.artwork;
         }
 
     }
@@ -63,6 +93,45 @@ public class ShowCardInfoOverlay : MonoBehaviour
             overlayPanel.SetActive(false);
         }
     }
+    public void ShowCardPreviewFromPrefab(GameObject cardPrefab)
+    {
+        if (cardPrefab == null || cardPreviewPanel == null || cardPreviewImage == null) return;
+
+        /*
+        CardInfo cardInfo = GetCardInfoFromPrefab(cardPrefab);
+        if (cardInfo == null)
+        {
+            Debug.LogWarning($"ShowCardInfoOverlay: No CardInfo found on {cardPrefab.name}.");
+            return;
+        }
+        */
+
+        //currentCard = cardInfo;
+
+
+        cardPreviewPanel.SetActive(true);
+        //cardPreviewImage.sprite = cardInfo.artwork;
+
+        cardPreviewImage.SetNativeSize();
+        cardPreviewImage.rectTransform.localScale = Vector3.one * previewScale;
+
+    }
+
+    public void HideCardPreview()
+    {
+        if (cardPreviewPanel != null)
+        {
+            cardPreviewPanel.SetActive(false);
+        }
+    }
+
+    /*
+    private CardInfo GetCardInfoFromPrefab(GameObject cardPrefab)
+    {
+        CardInfo info = cardPrefab.GetComponent<CardInfo>();
+        //if (info != null) return info;
+    }
+    */
 
     [System.Serializable]
     public class CardInfo

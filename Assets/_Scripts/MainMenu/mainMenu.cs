@@ -6,6 +6,12 @@ public class mainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Cutscene");
     }
+
+    public void restartGame()
+    {
+        SceneManager.LoadScene("Lyubo");
+    }
+    
     public void quitGame()
     {
         Application.Quit();

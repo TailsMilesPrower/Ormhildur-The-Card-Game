@@ -1,8 +1,9 @@
+using UnityEditor.Overlays;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class CardPlacement : MonoBehaviour,IPointerDownHandler,IPointerUpHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
-{
+public class CardPlacement : MonoBehaviour,IPointerDownHandler,IPointerUpHandler, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
+{    
     [Header("Placement Settings")]
     
     public string validCardTag = "Card";
@@ -29,6 +30,8 @@ public class CardPlacement : MonoBehaviour,IPointerDownHandler,IPointerUpHandler
     //CardManager cardManager
 
     [Header("Drag Card")]
+    public ShowCardInfoOverlay overlay;
+
     private Canvas canvas;
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
@@ -38,6 +41,12 @@ public class CardPlacement : MonoBehaviour,IPointerDownHandler,IPointerUpHandler
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
         canvas = GetComponentInParent<Canvas>();
+
+        if (overlay == null )
+        {
+            overlay = FindObjectOfType<ShowCardInfoOverlay>();
+        }
+
     }
     public void OnPointerUp(PointerEventData eventData)
     {
@@ -51,6 +60,18 @@ public class CardPlacement : MonoBehaviour,IPointerDownHandler,IPointerUpHandler
         if(Input.GetKeyDown(KeyCode.Mouse1))
         Debug.Log("onClick");
     }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (eventData.button == PointerEventData.InputButton.Right)
+        {
+            if (overlay != null)
+            {
+                overlay.ShowCardPreviewFromPrefab(gameObject);
+            }
+        }
+    }
+
     public void OnBeginDrag(PointerEventData eventData)
     {
         canvasGroup.alpha = 0.7f;

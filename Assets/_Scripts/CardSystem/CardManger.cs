@@ -55,11 +55,14 @@ public class CardManger : MonoBehaviour
         {
             //load end scene
             Debug.Log("enemy lost game");
+            SceneManager.LoadScene("VictoryScene");
         }
         if(playerHealth <= 0)
         {
             //load death scene
             Debug.Log(" you lost the game");
+            SceneManager.LoadScene("EndScene");
+
         }
 
         if (playerTurn) 

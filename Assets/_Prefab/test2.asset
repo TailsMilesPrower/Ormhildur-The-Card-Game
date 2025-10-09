@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: test2
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMoves
   type: 0
-  waitUnitilAllIsDead: 1
+  waitUnitilAllIsDead: 0
   cardsPlacement:
   - {fileID: 5154677888216063941, guid: 0114fd7371fa20f4489113c533f1b6f1, type: 3}
   - {fileID: 5154677888216063941, guid: 0114fd7371fa20f4489113c533f1b6f1, type: 3}

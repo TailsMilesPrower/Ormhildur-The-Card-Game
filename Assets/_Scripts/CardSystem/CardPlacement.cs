@@ -1,6 +1,8 @@
+
 using UnityEditor.Overlays;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class CardPlacement : MonoBehaviour,IPointerDownHandler,IPointerUpHandler, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
 {    
@@ -12,6 +14,8 @@ public class CardPlacement : MonoBehaviour,IPointerDownHandler,IPointerUpHandler
     private int currentCardCount = 0;
     [HideInInspector]
     public bool isPlaced = false;
+    SpriteRenderer cardShow;
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -55,22 +59,31 @@ public class CardPlacement : MonoBehaviour,IPointerDownHandler,IPointerUpHandler
         if (Input.GetKeyUp(KeyCode.Mouse1))
         {
             Debug.Log("Lift");
+            cardShow.sprite = null;
         }
     }
     public void OnPointerDown(PointerEventData eventData)
     {
         if(Input.GetKeyDown(KeyCode.Mouse1))
-        Debug.Log("onClick");
+        {
+            if (eventData.pointerDrag != null)
+            {
+                Image cardBase = eventData.pointerDrag.GetComponent<Image>();
+                if (cardBase != null) { 
+                    cardShow.sprite =  cardBase.sprite;
+                    Debug.Log("onClick");
+                }
+            }
+               
+            
+        }
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
         if (eventData.button == PointerEventData.InputButton.Right)
         {
-            if (overlay != null)
-            {
-                overlay.ShowCardPreviewFromPrefab(gameObject);
-            }
+
         }
     }
 
@@ -106,7 +119,8 @@ public class CardPlacement : MonoBehaviour,IPointerDownHandler,IPointerUpHandler
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        cardShow = GameObject.FindGameObjectWithTag("easy").GetComponent<SpriteRenderer>();
+        cardShow.sprite = null;
     }
 
     // Update is called once per frame

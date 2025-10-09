@@ -22,6 +22,7 @@ public class ShowCardInfoOverlay : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+
         if (overlayPanel != null)
         {
             overlayPanel.SetActive(false);
@@ -97,7 +98,7 @@ public class ShowCardInfoOverlay : MonoBehaviour
     {
         if (cardPrefab == null || cardPreviewPanel == null || cardPreviewImage == null) return;
 
-        
+        Debug.Log(" im on step 1");
         CardInfo cardInfo = GetCardInfoFromPrefab(cardPrefab);
         if (cardInfo == null)
         {
@@ -130,6 +131,8 @@ public class ShowCardInfoOverlay : MonoBehaviour
     {
         CardBase cardBase = cardPrefab.GetComponent<CardBase>();
         CardInfo info = new CardInfo();
+
+        Debug.Log("im on step 2");
 
         info.artwork = cardPrefab.GetComponent<Image>().sprite;
         info.description = cardBase.GiveDescription();

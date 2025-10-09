@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using TMPro;
 
 public class ResourceManagement : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class ResourceManagement : MonoBehaviour
     public int maxStamina = 1000;
     public int currentStamina = 3;
     public int staminaGainPerRound = 1;
+    public  TMP_Text text;
 
     [Header("Events")]
     public UnityEvent<int, int> onStaminaChanged;
@@ -34,6 +36,6 @@ public class ResourceManagement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        text.text = "Resouce Amount: " + currentStamina;
     }
 }

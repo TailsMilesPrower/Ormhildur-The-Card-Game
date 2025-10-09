@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -20,6 +21,9 @@ public class CardManger : MonoBehaviour
 
     public ResourceManagement reManagment;
 
+    public TMP_Text textPlayerHealth;
+    public TMP_Text textEnemyHealth;
+
     // infomation so enemy know where it is in is turn order
     private int currentSegement = 0;
     private int currentMove =0;
@@ -38,7 +42,10 @@ public class CardManger : MonoBehaviour
 
     private void Update()
     {
-        if(playerTurn== false && enemyturn == false)
+        textEnemyHealth.text = "Enemy Health: " + enemyHealth;
+        textPlayerHealth.text = "Player Health: " + playerHealth;
+
+        if (playerTurn== false && enemyturn == false)
         {
             StartCoroutine(EnemyTurn());
             enemyturn = true;

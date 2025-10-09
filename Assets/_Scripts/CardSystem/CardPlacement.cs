@@ -10,6 +10,8 @@ public class CardPlacement : MonoBehaviour,IPointerDownHandler,IPointerUpHandler
     public Vector2 placementOffset = new Vector2(0.2f, 0f);
     private int maxCards = 6;
     private int currentCardCount = 0;
+    [HideInInspector]
+    public bool isPlaced = false;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -44,7 +46,7 @@ public class CardPlacement : MonoBehaviour,IPointerDownHandler,IPointerUpHandler
 
         if (overlay == null )
         {
-            overlay = FindObjectOfType<ShowCardInfoOverlay>();
+            overlay = FindFirstObjectByType<ShowCardInfoOverlay>();
         }
 
     }
@@ -74,20 +76,29 @@ public class CardPlacement : MonoBehaviour,IPointerDownHandler,IPointerUpHandler
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        canvasGroup.alpha = 0.7f;
-        canvasGroup.blocksRaycasts = false;
+        if (isPlaced == false)
+        {
+            canvasGroup.alpha = 0.7f;
+            canvasGroup.blocksRaycasts = false;
+        }
     }
     
     public void OnDrag(PointerEventData eventData)
     {
-        rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        if (isPlaced == false)
+        {
+            rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        }
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        canvasGroup.alpha = 1f;
-        canvasGroup.blocksRaycasts = true;
-        //currentCardCount--;
+        if (isPlaced == false) 
+        { 
+            canvasGroup.alpha = 1f;
+            canvasGroup.blocksRaycasts = true;
+            //currentCardCount--;
+        }
     }
 
 

@@ -42,17 +42,17 @@ public class ShowCardInfoOverlay : MonoBehaviour
             return;
         }
 
-        /*
+        
         CardInfo cardInfo = GetCardInfoFromPrefab(cardPrefab);
         if (cardInfo == null)
         {
             Debug.LogWarning("CardInfoOverlay: No cardInfo component found");
             return;
         }
-        */
+        
 
-        //currentCard = cardInfo;
-        //ShowCardInfo(cardInfo);
+        currentCard = cardInfo;
+        ShowCardInfo(cardInfo);
 
     }
 
@@ -97,20 +97,20 @@ public class ShowCardInfoOverlay : MonoBehaviour
     {
         if (cardPrefab == null || cardPreviewPanel == null || cardPreviewImage == null) return;
 
-        /*
+        
         CardInfo cardInfo = GetCardInfoFromPrefab(cardPrefab);
         if (cardInfo == null)
         {
             Debug.LogWarning($"ShowCardInfoOverlay: No CardInfo found on {cardPrefab.name}.");
             return;
         }
-        */
+        
 
-        //currentCard = cardInfo;
+        currentCard = cardInfo;
 
 
         cardPreviewPanel.SetActive(true);
-        //cardPreviewImage.sprite = cardInfo.artwork;
+        cardPreviewImage.sprite = cardInfo.artwork;
 
         cardPreviewImage.SetNativeSize();
         cardPreviewImage.rectTransform.localScale = Vector3.one * previewScale;
@@ -125,15 +125,23 @@ public class ShowCardInfoOverlay : MonoBehaviour
         }
     }
 
-    /*
+    
     private CardInfo GetCardInfoFromPrefab(GameObject cardPrefab)
     {
-        CardInfo info = cardPrefab.GetComponent<CardInfo>();
-        //if (info != null) return info;
-    }
-    */
+        CardBase cardBase = cardPrefab.GetComponent<CardBase>();
+        CardInfo info = new CardInfo();
 
-    [System.Serializable]
+        info.artwork = cardPrefab.GetComponent<Image>().sprite;
+        info.description = cardBase.GiveDescription();
+        info.cardName = cardBase.GiveName();
+        info.cost = cardBase.GiveCost();
+
+        if (info != null) return info;
+        return null;
+    }
+    
+
+   [System.Serializable]
     public class CardInfo
     {
         public string cardName;

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public abstract class CardBase : MonoBehaviour
 {
@@ -77,6 +78,22 @@ public abstract class CardBase : MonoBehaviour
         return target;
     }
  
+    public virtual string GiveName()
+    {
+        return name;
+    }
+
+
+    public virtual int GiveCost()
+    {
+        return price;
+    }
+
+    public virtual string GiveDescription()
+    {
+        return "";
+
+    }
 
 
 }

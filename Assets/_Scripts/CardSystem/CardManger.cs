@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -43,7 +44,7 @@ public class CardManger : MonoBehaviour
             enemyturn = true;
         }
         UpdateSpace();
-        if (enemySegment.Length<= currentSegement|| enemyHealth <= 0)
+        if ( enemyHealth <= 0)
         {
             //load end scene
             Debug.Log("enemy lost game");
@@ -81,7 +82,7 @@ public class CardManger : MonoBehaviour
     }
 
     public IEnumerator EnemyTurn()
-   {
+    {
         if (currentSegement < enemySegment.Length)
         {
             if (enemySegment[currentSegement].type == EnemyMoves.enemyMove.cardPlacing)
@@ -102,7 +103,7 @@ public class CardManger : MonoBehaviour
                             newlyPlaceCard.transform.position = enemyPosition[spotLefts[randomNumber]].transform.position;
 
                             newlyPlaceCard.transform.parent = cardCanvas.transform;
-                            newlyPlaceCard.GetComponent<CardPlacement>().enabled = false;
+                            newlyPlaceCard.GetComponent<CardPlacement>().isPlaced= true;
 
                             enemyTable[spotLefts[randomNumber]] = newlyPlaceCard.GetComponent<CardBase>();
                             freePosition[spotLefts[randomNumber]] = false;
@@ -147,6 +148,8 @@ public class CardManger : MonoBehaviour
             }
 
         }
+        yield return new WaitForEndOfFrame();
+        reManagment.currentStamina += reManagment.staminaGainPerRound;
         enemyturn = false;
         playerTurn = true;
     }

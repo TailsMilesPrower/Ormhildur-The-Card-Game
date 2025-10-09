@@ -4,7 +4,7 @@ public class mainMenu : MonoBehaviour
 {
     public void playGame()
     {
-        SceneManager.LoadScene("Lyubo");
+        SceneManager.LoadScene("Cutscene");
     }
     public void quitGame()
     {

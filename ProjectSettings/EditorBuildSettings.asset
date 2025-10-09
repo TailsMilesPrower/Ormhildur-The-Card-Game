@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: c77f436b8cba4984f8760de10e5de5f6
   - enabled: 1
+    path: Assets/Scenes/Cutscene.unity
+    guid: f0f35af991044ad4aa589fd6721ffa99
+  - enabled: 1
     path: Assets/Scenes/Lyubo.unity
     guid: 67fc5db930b193b41afe0f7f7b1cda5f
   - enabled: 1

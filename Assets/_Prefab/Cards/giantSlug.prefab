@@ -10,11 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5296949385398155938}
   - component: {fileID: 4286063499835132635}
-  - component: {fileID: 3887913836183223678}
   - component: {fileID: 8060238921821472016}
-  - component: {fileID: 5152923415449076042}
   - component: {fileID: 3931631746133327674}
-  - component: {fileID: 6835088508254908040}
   - component: {fileID: 6821376998391987993}
   - component: {fileID: 410285508314233155}
   - component: {fileID: 6971286136122853823}
@@ -102,24 +99,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3887913836183223678
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9174175155557285266}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1042bfeddd539254d94371b3a2819eb8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ResourceManagement
-  maxStamina: 1000
-  currentStamina: 3
-  staminaGainPerRound: 1
-  onStaminaChanged:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!61 &8060238921821472016
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -166,23 +145,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &5152923415449076042
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9174175155557285266}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a69cefb90cfa394d9d4e4f821c03efe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ShowCardInfoOverlay
-  overlayPanel: {fileID: 0}
-  cardNameText: {fileID: 0}
-  cardDescriptionText: {fileID: 0}
-  cardCostText: {fileID: 0}
-  cardArtworkImage: {fileID: 7338428466799863680, guid: 5727b0adfeffc3b4aba4d99930d2bb2c, type: 3}
 --- !u!114 &3931631746133327674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,23 +159,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CardPlacement
   validCardTag: Card
   placementOffset: {x: 0.2, y: 0}
---- !u!114 &6835088508254908040
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9174175155557285266}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd64ed90c5578c7499141c44a2ebf4a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CardHighlight
-  highlightColor: {r: 0, g: 1, b: 0, a: 1}
-  unavailableColor: {r: 1, g: 0, b: 0, a: 1}
-  normalColor: {r: 1, g: 1, b: 1, a: 1}
-  cardCost: 0
-  resourceManagement: {fileID: 3887913836183223678}
 --- !u!114 &6821376998391987993
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -18,11 +18,11 @@ public class mainMenu : MonoBehaviour
     }
     public void Credits()
     {
-               SceneManager.LoadScene("Credits");
+        SceneManager.LoadScene("Credits");
     }
-    public void BackToMenu()
+    public void backToMenu()
     {
-                      SceneManager.LoadScene("mainMenu");
+        SceneManager.LoadScene("mainMenu");
     }
 
 

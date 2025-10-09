@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3931631746133327674}
   - component: {fileID: 3453948219312013795}
   - component: {fileID: 342913851193187496}
+  - component: {fileID: -8733567927227053176}
   m_Layer: 0
   m_Name: Raudur
   m_TagString: Card
@@ -218,3 +219,15 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &-8733567927227053176
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9174175155557285266}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0

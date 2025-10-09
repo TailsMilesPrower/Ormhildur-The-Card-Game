@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4206362464203017428}
   - component: {fileID: 6491016700914519558}
   - component: {fileID: 6054207220666729117}
+  - component: {fileID: 49439266891206254}
   m_Layer: 0
   m_Name: ForestNaddi
   m_TagString: Card
@@ -219,3 +220,15 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &49439266891206254
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9174175155557285266}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0

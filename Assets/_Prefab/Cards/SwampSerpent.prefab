@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3931631746133327674}
   - component: {fileID: 5141181809222734281}
   - component: {fileID: 5905061430585063906}
+  - component: {fileID: 2611491097441693298}
   m_Layer: 0
   m_Name: SwampSerpent
   m_TagString: Card
@@ -220,3 +221,15 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &2611491097441693298
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9174175155557285266}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0

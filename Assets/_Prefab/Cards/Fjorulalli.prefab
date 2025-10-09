@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -5723043617085517472}
   - component: {fileID: 4082780240386820545}
   - component: {fileID: 7763726924082861112}
+  - component: {fileID: 2876272481991098432}
   m_Layer: 0
   m_Name: Fjorulalli
   m_TagString: Card
@@ -217,3 +218,15 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &2876272481991098432
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9174175155557285266}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0

@@ -1873,6 +1873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3136f1f1790d1074d8de0eb7a8b8086c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CardManger
+  cardCanvas: {fileID: 1847992701}
   enemyPosition:
   - {fileID: 1160618736}
   - {fileID: 595076122}
@@ -2099,11 +2100,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3320426905868391425, guid: 0114fd7371fa20f4489113c533f1b6f1, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0.67
+      value: 76.67
       objectReference: {fileID: 0}
     - target: {fileID: 3320426905868391425, guid: 0114fd7371fa20f4489113c533f1b6f1, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0.94
+      value: 107.57
       objectReference: {fileID: 0}
     - target: {fileID: 3320426905868391425, guid: 0114fd7371fa20f4489113c533f1b6f1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2135,11 +2136,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3320426905868391425, guid: 0114fd7371fa20f4489113c533f1b6f1, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -857.6
+      value: -813
       objectReference: {fileID: 0}
     - target: {fileID: 3320426905868391425, guid: 0114fd7371fa20f4489113c533f1b6f1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -335.47
+      value: -288
       objectReference: {fileID: 0}
     - target: {fileID: 3320426905868391425, guid: 0114fd7371fa20f4489113c533f1b6f1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2156,6 +2157,14 @@ PrefabInstance:
     - target: {fileID: 5154677888216063941, guid: 0114fd7371fa20f4489113c533f1b6f1, type: 3}
       propertyPath: m_Name
       value: CardProtype
+      objectReference: {fileID: 0}
+    - target: {fileID: 5387770472704592320, guid: 0114fd7371fa20f4489113c533f1b6f1, type: 3}
+      propertyPath: m_Size.x
+      value: 76
+      objectReference: {fileID: 0}
+    - target: {fileID: 5387770472704592320, guid: 0114fd7371fa20f4489113c533f1b6f1, type: 3}
+      propertyPath: m_Size.y
+      value: 107.4
       objectReference: {fileID: 0}
     - target: {fileID: 7155436319714923889, guid: 0114fd7371fa20f4489113c533f1b6f1, type: 3}
       propertyPath: overlayPanel

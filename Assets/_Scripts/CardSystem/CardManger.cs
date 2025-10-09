@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class CardManger : MonoBehaviour
 {
+    public GameObject cardCanvas;
     public GameObject[] enemyPosition;
     private List<bool> freePosition;
     
@@ -99,6 +100,9 @@ public class CardManger : MonoBehaviour
                             newlyPlaceCard.transform.eulerAngles = new Vector3(0, 0, 180);
 
                             newlyPlaceCard.transform.position = enemyPosition[spotLefts[randomNumber]].transform.position;
+
+                            newlyPlaceCard.transform.parent = cardCanvas.transform;
+                            newlyPlaceCard.GetComponent<CardPlacement>().enabled = false;
 
                             enemyTable[spotLefts[randomNumber]] = newlyPlaceCard.GetComponent<CardBase>();
                             freePosition[spotLefts[randomNumber]] = false;

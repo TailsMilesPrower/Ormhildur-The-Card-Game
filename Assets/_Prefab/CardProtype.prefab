@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 4406986291613229369}
   - component: {fileID: 6031645126549552226}
   - component: {fileID: 6950514480673522566}
-  - component: {fileID: 3794819706003624497}
   - component: {fileID: 8918114100476928075}
   - component: {fileID: 5387770472704592320}
   - component: {fileID: 7155436319714923889}
   - component: {fileID: 1336029084715546503}
   - component: {fileID: 3959782284599103600}
+  - component: {fileID: -8376578651284039814}
   m_Layer: 0
   m_Name: CardProtype
   m_TagString: Card
@@ -32,9 +32,9 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5154677888216063941}
-  m_LocalRotation: {x: -0.258819, y: -0, z: -0, w: 0.9659259}
+  m_LocalRotation: {x: -0.258819, y: 0, z: 0, w: 0.9659259}
   m_LocalPosition: {x: 0, y: 0, z: -9612}
-  m_LocalScale: {x: 183.6, y: 194.40001, z: 108}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -140,24 +140,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3794819706003624497
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5154677888216063941}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1042bfeddd539254d94371b3a2819eb8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ResourceManagement
-  maxStamina: 1000
-  currentStamina: 3
-  staminaGainPerRound: 1
-  onStaminaChanged:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &8918114100476928075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,7 +202,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 76, y: 107.4}
   m_EdgeRadius: 0
 --- !u!114 &7155436319714923889
 MonoBehaviour:
@@ -269,4 +251,16 @@ MonoBehaviour:
   unavailableColor: {r: 1, g: 0, b: 0, a: 1}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   cardCost: 0
-  resourceManagement: {fileID: 3794819706003624497}
+  resourceManagement: {fileID: 0}
+--- !u!225 &-8376578651284039814
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5154677888216063941}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0

@@ -46,8 +46,8 @@ public class CardPlacement : MonoBehaviour,IPointerDownHandler, IBeginDragHandle
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
-        //canvasGroup.alpha = 0.7f;
-        //canvasGroup.blocksRaycasts = false;
+        canvasGroup.alpha = 0.7f;
+        canvasGroup.blocksRaycasts = false;
     }
     
     public void OnDrag(PointerEventData eventData)
@@ -57,10 +57,11 @@ public class CardPlacement : MonoBehaviour,IPointerDownHandler, IBeginDragHandle
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        //canvasGroup.alpha = 1f;
-        //canvasGroup.blocksRaycasts = true;
+        canvasGroup.alpha = 1f;
+        canvasGroup.blocksRaycasts = true;
         //currentCardCount--;
     }
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

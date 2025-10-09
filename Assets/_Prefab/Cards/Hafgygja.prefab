@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -4300594720624729017}
   - component: {fileID: 2493840193134264657}
   - component: {fileID: 7227745215274642808}
+  - component: {fileID: 2202980652981653324}
   m_Layer: 0
   m_Name: Hafgygja
   m_TagString: Card
@@ -218,3 +219,15 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &2202980652981653324
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9174175155557285266}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0

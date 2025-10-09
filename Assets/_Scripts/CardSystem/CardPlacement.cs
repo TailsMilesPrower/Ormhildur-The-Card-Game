@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class CardPlacement : MonoBehaviour,IPointerDownHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class CardPlacement : MonoBehaviour,IPointerDownHandler,IPointerUpHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     [Header("Placement Settings")]
     
@@ -39,9 +39,16 @@ public class CardPlacement : MonoBehaviour,IPointerDownHandler, IBeginDragHandle
         canvasGroup = GetComponent<CanvasGroup>();
         canvas = GetComponentInParent<Canvas>();
     }
-
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        if (Input.GetKeyUp(KeyCode.Mouse1))
+        {
+            Debug.Log("Lift");
+        }
+    }
     public void OnPointerDown(PointerEventData eventData)
     {
+        if(Input.GetKeyDown(KeyCode.Mouse1))
         Debug.Log("onClick");
     }
     public void OnBeginDrag(PointerEventData eventData)

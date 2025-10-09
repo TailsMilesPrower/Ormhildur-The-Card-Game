@@ -18,6 +18,8 @@ public class CardManger : MonoBehaviour
     public CardBase[] enemyTable;
     public EnemyMoves[] enemySegment;
 
+    public ResourceManagement reManagment;
+
     // infomation so enemy know where it is in is turn order
     private int currentSegement = 0;
     private int currentMove =0;

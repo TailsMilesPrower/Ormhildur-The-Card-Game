@@ -15,10 +15,10 @@ MonoBehaviour:
   type: 0
   waitUnitilAllIsDead: 1
   cardsPlacement:
-  - {fileID: 1124287844721648315, guid: a6cea20e634c6d447bbf87156506c429, type: 3}
-  - {fileID: 1124287844721648315, guid: a6cea20e634c6d447bbf87156506c429, type: 3}
-  - {fileID: 1124287844721648315, guid: a6cea20e634c6d447bbf87156506c429, type: 3}
-  - {fileID: 1124287844721648315, guid: a6cea20e634c6d447bbf87156506c429, type: 3}
+  - {fileID: 5154677888216063941, guid: 0114fd7371fa20f4489113c533f1b6f1, type: 3}
+  - {fileID: 5154677888216063941, guid: 0114fd7371fa20f4489113c533f1b6f1, type: 3}
+  - {fileID: 5154677888216063941, guid: 0114fd7371fa20f4489113c533f1b6f1, type: 3}
+  - {fileID: 5154677888216063941, guid: 0114fd7371fa20f4489113c533f1b6f1, type: 3}
   speaker: 
   facailExprestion: []
   diaglouge: []

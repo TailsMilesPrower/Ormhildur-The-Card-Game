@@ -1,14 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class CardManger : MonoBehaviour
 {
     public GameObject[] enemyPosition;
-    private List<bool> freePosition = new List<bool>();
+    private List<bool> freePosition;
     
     [SerializeField] private int playerHealth;
     [SerializeField] private int enemyHealth;
@@ -29,7 +27,8 @@ public class CardManger : MonoBehaviour
     
     void Start()
     {
-        for(int i = 0; enemyPosition.Length>i; i++)
+        freePosition = new List<bool>();
+        for (int i = 0; enemyPosition.Length>i; i++)
         {
             freePosition.Add(true);
         }
